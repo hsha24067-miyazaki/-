@@ -12,65 +12,62 @@
 <body>
     <div class="app-container">
         <header>
-            <h1>🐷 ピッグリ運命の選択 🎲</h1>
-            <p class="subtitle">空腹に呼びかける、運命のおみくじ育成ゲーム</p>
+            <h1>🐷 ピッグリ運命の選択</h1>
+            <p class="subtitle">空腹に呼びかける、運命のおみくじ</p>
         </header>
 
         <main>
             <section id="screen-home" class="screen active">
                 <div class="status-panel">
-                    <p>ブタさんの状態: <span id="pig-status-text" class="status-badge status-normal">なみ</span></p>
+                    <p>ブタさんの状態</p>
+                    <span id="pig-status-text" class="status-badge status-normal">なみ</span>
                 </div>
                 <div class="pig-display">
                     <div id="pig-avatar" class="pig-image avatar-normal"></div>
                 </div>
-                <div class="action-zone">
-                    <button id="btn-draw-omikuji" class="btn btn-primary btn-bounce">おなかがすいた！（おみくじ）</button>
-                    <button id="btn-open-zukan" class="btn btn-secondary">🐷 図鑑を見る</button>
+                <div class="action-zone vertical">
+                    <button id="btn-draw-omikuji" class="btn btn-primary btn-bounce">おなかがすいたブヒ！</button>
+                    <button id="btn-open-zukan" class="btn btn-secondary">カラフル図鑑を見る</button>
                 </div>
             </section>
 
             <section id="screen-omikuji" class="screen">
                 <div id="omikuji-loading" class="loading-box">
                     <div class="omikuji-box-anim">🥠</div>
-                    <p class="loading-text">運命をシャッフル中ブヒ...</p>
+                    <p>運命をシャッフル中...</p>
                 </div>
                 <div id="omikuji-result" class="result-box hidden">
-                    <h2 class="section-title">✨ おみくじ結果 ✨</h2>
-                    <div id="omikuji-card" class="omikuji-card">
+                    <div class="omikuji-card">
+                        <p>✨ 結果発表 ✨</p>
                         <div id="omikuji-luck" class="luck-title">大吉</div>
-                        <div id="omikuji-food" class="food-name">サラダ</div>
+                        <div id="omikuji-food" class="food-name">ヘルシーサラダ</div>
                         <p class="instruction-text">⚠️ 指示は絶対ですブヒ！ ⚠️</p>
                     </div>
-                    <div class="action-zone vertical">
-                        <button id="btn-report-success" class="btn btn-success">指示通りに行動した！</button>
-                    </div>
+                    <button id="btn-report-success" class="btn btn-success">指示に従ったブヒ！</button>
                 </div>
             </section>
 
             <section id="screen-detector" class="screen">
-                <h2 class="section-title">🔍 嘘発見器 🔍</h2>
+                <h2 class="section-title">🔍 嘘発見器スキャン</h2>
                 <div class="detector-container">
                     <div class="scan-line"></div>
                     <div class="detector-heart">💓</div>
                     <div id="detector-status" class="detector-status">Analyzing...</div>
                 </div>
-                <p class="detector-desc">本当に指示に従いましたか？</p>
+                <p>本当に指示に従いましたか？</p>
             </section>
 
             <section id="screen-resolution" class="screen">
-                <h2 id="resolution-title" class="section-title">結果発表</h2>
+                <h2 id="resolution-title">運命の結果</h2>
                 <div class="pig-display">
                     <div id="resolution-pig-avatar" class="pig-image"></div>
                 </div>
                 <p id="resolution-text" class="resolution-message"></p>
-                <div class="action-zone">
-                    <button id="btn-back-home" class="btn btn-primary">ホームへ</button>
-                </div>
+                <button id="btn-back-home" class="btn btn-primary">ホームに戻る</button>
             </section>
 
             <section id="screen-zukan" class="screen">
-                <h2 class="section-title">🐷 ぽっちゃり図鑑 🐷</h2>
+                <h2>🐷 カラフル変遷図鑑</h2>
                 <div class="zukan-grid">
                     <div class="zukan-item" id="zukan-slim"></div>
                     <div class="zukan-item" id="zukan-normal"></div>

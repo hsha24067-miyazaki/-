@@ -9,19 +9,19 @@ let appState = {
 };
 
 const WEIGHT_CONFIG = {
-    0: { text: "スタイリッシュ", class: "avatar-slim", badgeClass: "status-slim" },
-    1: { text: "標準ブヒ", class: "avatar-normal", badgeClass: "status-normal" },
-    2: { text: "ぽっちゃり", class: "avatar-chubby", badgeClass: "status-chubby" },
-    3: { text: "大激太り", class: "avatar-fat", badgeClass: "status-fat" },
-    4: { text: "最終形態(ギガ)", class: "avatar-giga", badgeClass: "status-giga" }
+    0: { text: "スタイリッシュ(虹)", class: "avatar-slim", badgeClass: "status-slim" },
+    1: { text: "標準ブヒ(ピンク)", class: "avatar-normal", badgeClass: "status-normal" },
+    2: { text: "マシュマロ(緑)", class: "avatar-chubby", badgeClass: "status-chubby" },
+    3: { text: "わがまま(青)", class: "avatar-fat", badgeClass: "status-fat" },
+    4: { text: "ギガ・ブタ(茶色)", class: "avatar-giga", badgeClass: "status-giga" }
 };
 
 const ZUKAN_NAMES = {
-    0: "スタイリッシュ・ピッグ",
-    1: "標準ブヒ",
-    2: "マシュマロ・トントン",
-    3: "わがままボディ・ブー",
-    4: "ギガ・ブタゴラス"
+    0: "スタイリッシュ（虹色）",
+    1: "標準ブヒ（ピンク）",
+    2: "マシュマロ（緑）",
+    3: "わがまま（青）",
+    4: "ギガ・ブタ（茶色）"
 };
 
 const OMIKUJI_POOL = [
@@ -98,14 +98,14 @@ function processResolution(isPassed) {
     if (isPassed) {
         if (foodType === 'good') {
             if (appState.currentWeightLevel > 0) appState.currentWeightLevel--;
-            message = "🎉 【合格】正直に我慢しましたね！スマートになりました！";
+            message = "🎉 【合格】正直に我慢しましたね！ブタさんの色が鮮やかに変化しました！";
         } else {
             if (appState.currentWeightLevel < 4) appState.currentWeightLevel++;
-            message = "🍔 【合格】正直に食べましたね。おみくじの指示通り太りました。";
+            message = "🍔 【合格】正直に食べましたね。指示通りブタさんの色が変わりました。";
         }
     } else {
         if (appState.currentWeightLevel < 4) appState.currentWeightLevel++;
-        message = "🚨 【エラー】嘘つき判定！理不尽ペナルティで激太りです！";
+        message = "🚨 【エラー】嘘つき判定！理不尽ペナルティでブタさんの色が突然変異しました！";
     }
     
     appState.unlockedZukan[appState.currentWeightLevel] = true;
@@ -128,7 +128,7 @@ function renderZukan() {
             if (appState.unlockedZukan[i]) {
                 itemEl.innerHTML = `
                     <div class="zukan-pic item-${getStylePrefix(i)}"></div>
-                    <p class="zukan-name">${ZUKAN_NAMES[i]}</p>
+                    <p>${ZUKAN_NAMES[i]}</p>
                 `;
             } else {
                 itemEl.innerHTML = `<div class="zukan-pic">🔒</div><p>未解放</p>`;
