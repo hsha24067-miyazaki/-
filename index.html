@@ -5,47 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ピッグリ運命の選択</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for cute rounded text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
-        <!-- HEADER -->
         <header>
             <h1>🐷 ピッグリ運命の選択 🎲</h1>
             <p class="subtitle">空腹に呼びかける、運命のおみくじ育成ゲーム</p>
         </header>
 
-        <!-- MAIN VIEW AREA -->
         <main>
-            <!-- 1. HOME SCREEN -->
             <section id="screen-home" class="screen active">
                 <div class="status-panel">
-                    <p>あなたのブタさんの状態: <span id="pig-status-text" class="status-badge status-normal">なみ</span></p>
+                    <p>ブタさんの状態: <span id="pig-status-text" class="status-badge status-normal">なみ</span></p>
                 </div>
                 <div class="pig-display">
                     <div id="pig-avatar" class="pig-image avatar-normal"></div>
                 </div>
                 <div class="action-zone">
-                    <button id="btn-draw-omikuji" class="btn btn-primary btn-bounce">おなかがすいた！（おみくじを引く）</button>
-                    <button id="btn-open-zukan" class="btn btn-secondary">🐷 ぽっちゃり図鑑を見る</button>
+                    <button id="btn-draw-omikuji" class="btn btn-primary btn-bounce">おなかがすいた！（おみくじ）</button>
+                    <button id="btn-open-zukan" class="btn btn-secondary">🐷 図鑑を見る</button>
                 </div>
             </section>
 
-            <!-- 2. OMIKUJI ANIMATION & RESULT SCREEN -->
             <section id="screen-omikuji" class="screen">
                 <div id="omikuji-loading" class="loading-box">
                     <div class="omikuji-box-anim">🥠</div>
                     <p class="loading-text">運命をシャッフル中ブヒ...</p>
                 </div>
                 <div id="omikuji-result" class="result-box hidden">
-                    <h2 class="section-title">✨ おみくじの結果 ✨</h2>
+                    <h2 class="section-title">✨ おみくじ結果 ✨</h2>
                     <div id="omikuji-card" class="omikuji-card">
                         <div id="omikuji-luck" class="luck-title">大吉</div>
-                        <div id="omikuji-food" class="food-name">ヘルシーサラダ</div>
-                        <p class="instruction-text">⚠️ アプリの指示は絶対です！必ず従ってください。 ⚠️</p>
+                        <div id="omikuji-food" class="food-name">サラダ</div>
+                        <p class="instruction-text">⚠️ 指示は絶対ですブヒ！ ⚠️</p>
                     </div>
                     <div class="action-zone vertical">
                         <button id="btn-report-success" class="btn btn-success">指示通りに行動した！</button>
@@ -53,65 +48,42 @@
                 </div>
             </section>
 
-            <!-- 3. LIE DETECTOR SCREEN -->
             <section id="screen-detector" class="screen">
-                <h2 class="section-title">🔍 嘘発見器スキャン 🔍</h2>
-                <p class="detector-desc">本当に指示に従いましたか？<br>誠実さをスキャンしています...</p>
+                <h2 class="section-title">🔍 嘘発見器 🔍</h2>
                 <div class="detector-container">
                     <div class="scan-line"></div>
                     <div class="detector-heart">💓</div>
                     <div id="detector-status" class="detector-status">Analyzing...</div>
                 </div>
-                <p class="sub-alert">※この嘘発見器は100%の精度（完全ランダム）です。</p>
+                <p class="detector-desc">本当に指示に従いましたか？</p>
             </section>
 
-            <!-- 4. RESOLUTION / RESULT REPORT SCREEN -->
             <section id="screen-resolution" class="screen">
-                <h2 id="resolution-title" class="section-title">判定結果</h2>
+                <h2 id="resolution-title" class="section-title">結果発表</h2>
                 <div class="pig-display">
                     <div id="resolution-pig-avatar" class="pig-image"></div>
                 </div>
-                <p id="resolution-text" class="resolution-message">テキスト</p>
+                <p id="resolution-text" class="resolution-message"></p>
                 <div class="action-zone">
-                    <button id="btn-back-home" class="btn btn-primary">ホームに戻る</button>
+                    <button id="btn-back-home" class="btn btn-primary">ホームへ</button>
                 </div>
             </section>
 
-            <!-- 5. ZUKAN (COLLECTION) SCREEN -->
             <section id="screen-zukan" class="screen">
                 <h2 class="section-title">🐷 ぽっちゃり図鑑 🐷</h2>
-                <p class="zukan-desc">太ってしまったブタさんたちの愛らしい姿の記録です。</p>
                 <div class="zukan-grid">
-                    <div class="zukan-item" id="zukan-slim">
-                        <div class="zukan-pic item-slim"></div>
-                        <p class="zukan-name">スタイリッシュ・ピッグ</p>
-                    </div>
-                    <div class="zukan-item" id="zukan-normal">
-                        <div class="zukan-pic item-normal"></div>
-                        <p class="zukan-name">標準ブヒ</p>
-                    </div>
-                    <div class="zukan-item" id="zukan-chubby">
-                        <div class="zukan-pic item-chubby">🔒 未解放</div>
-                    </div>
-                    <div class="zukan-item" id="zukan-fat">
-                        <div class="zukan-pic item-fat">🔒 未解放</div>
-                    </div>
-                    <div class="zukan-item" id="zukan-giga">
-                        <div class="zukan-pic item-giga">🔒 未解放</div>
-                    </div>
+                    <div class="zukan-item" id="zukan-slim"></div>
+                    <div class="zukan-item" id="zukan-normal"></div>
+                    <div class="zukan-item" id="zukan-chubby"></div>
+                    <div class="zukan-item" id="zukan-fat"></div>
+                    <div class="zukan-item" id="zukan-giga"></div>
                 </div>
-                <div class="action-zone">
-                    <button id="btn-close-zukan" class="btn btn-secondary">ホームに戻る</button>
-                </div>
+                <button id="btn-close-zukan" class="btn btn-secondary">閉じる</button>
             </section>
         </main>
         
-        <footer>
-            <p>&copy; 2026 ピッグリ運命の選択 Project</p>
-        </footer>
+        <footer>&copy; 2026 ピッグリ運命の選択</footer>
     </div>
-
-    <!-- Audio Placeholder for future use or effects if needed -->
     <script src="script.js"></script>
 </body>
 </html>
